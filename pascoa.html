@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolateria</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Pirata+One&family=Updock&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        main {
+            margin-top: 260px;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #bab2a6;
+        }
+
+        .menu_top {
+            width: 100%;
+            height: 170px;
+            border-bottom: 3px solid #4c2b10;
+            border-top: 10px solid #4c2b10;
+            background-color: rgb(183, 168, 149);
+        }
+
+        .top_esp {
+            width: 160px;
+            float: left;
+            padding: 10px;
+        }
+
+        .top_dir {
+            float: left;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 80px;
+            color: #ffffff;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+
+
+        .menu_donw {
+            background: #4c2b10;
+            height: 70px;
+            text-align: center;
+        }
+
+        .menu {
+            color: #4c2b10;
+            position: relative;
+            top: 15px;
+            padding: 10px;
+        }
+
+        .menu ul {
+            text-align: center;
+            margin: auto;
+            padding: 0;
+            max-width: 90%;
+        }
+
+        .menu ul li {
+            background-color: #fbefdf;
+            width: 20%;
+            height: 40px;
+            float: left;
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .menu ul li:hover {
+            background-color: #ffffff;
+        }
+
+        .menu ul {
+            padding: 0;
+            max-width: 500px;
+        }
+
+        .menu ul li {
+            background-color: #4c2b10;
+            color: white;
+            float: left;
+            width: 100px;
+            height: 40px;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+        }
+
+        .menu ul li:hover {
+            background-color: #bab2a6;
+        }
+
+        .menu ul ul {
+            display: none;
+        }
+
+        .menu ul li:hover>ul {
+            display: block;
+        }
+
+        .menu ul ul ul {
+            margin-left: 102px;
+            position: absolute;
+            top: 0px;
+        }
+
+        .menu ul ul li:hover {
+            background-color: #bab2a6;
+        }
+
+        .menu ul ul ul li:hover {
+            background-color: #8b7d6a;
+        }
+
+        input {
+            /* "pesquisar" */
+            width: 20%;
+            height: 30px;
+            font-size: 18px;
+            margin: 45px 0 0 60px;
+            background-color: #ffffff;
+            border: solid rgb(1, 1, 1) 3px;
+            border-radius: 10px;
+            float: left;
+
+        }
+
+        button {
+            width: 42px;
+            height: 33px;
+            font-size: 18px;
+            margin: 45px 0 0 5px;
+            background-color: #ffffff;
+            border: solid rgb(1, 1, 1) 3px;
+            border-radius: 10px;
+            float: left;
+        }
+
+        button:hover {
+            background-color: #4c2b10;
+            color: #8b7d6a;
+        }
+
+        .down_down img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            margin: 40px 0px;
+            padding: 5px;
+
+        }
+
+        .down_down {
+            float: left;
+
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .ovos {
+            background-color: #311b04;
+            float: left;
+            text-align: center;
+        }
+
+        .ovos img {
+            padding: 80px;
+        }
+
+        .roda {
+            margin-top: -20px;
+            height: 330px;
+            background-color: rgb(183, 168, 149);
+        }
+
+        .roda .down_up {
+            text-align: center;
+            color: rgb(183, 168, 149);
+            font-family: 'Finger Paint', cursive;
+            font-size: 4em;
+            background-color: #8b7d6a;
+        }
+
+        .roda .down_meio {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-family: 'Finger Paint', cursive;
+            font-size: 1.5em;
+            text-align: center;
+            background-color:rgb(183, 168, 149) ;
+        }
+
+        .roda .down_down {
+            text-align: center;
+        }
+
+        .roda .down_down img {
+            width: 40px;
+            border-radius: 25px;
+            border: 4px rgb(183, 168, 149) dotted;
+            cursor: pointer;
+            margin: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <body>
+        <div class="menu_top">
+            <div class="top_esp">
+                <figure>
+                    <img src="img/easter (1).png" alt="logo" height="90px">
+                </figure>
+            </div>
+            <div class="top_dir">
+                Chocolateria rossueno
+            </div>
+            <input type="text" name="pesq" placeholder="Pesquisar">
+            <button>OK</button>
+            <div class="down_down">
+                <a href="https://pt-br.facebook.com/" target="_blank"><img src="img/facebook-app-symbol.png" width="20"
+                        height="20"></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><img src="img/whatsapp.png" width="25"
+                        height="30"></a>
+                <a href="https://wwww. instagram.com/" target="_blank"><img src="img/inst_logo_01.png" width="20"
+                        height="20"></a>
+            </div>
+
+            <div class="clear"></div>
+            <div class="menu_donw">
+                <nav class="menu">
+                    <ul>
+                        <li>HOME
+                            <ul>
+                                <li>Amazonas</li>
+                                <li>ParÃ¡</li>
+                                <li>Roraima
+                                    <ul>
+                                        <li>Capital</li>
+                                        <li>Interior</li>
+                                    </ul>
+                                </li>
+                                <li>AmapÃ¡</li>
+                                <li>Rondonia</li>
+                                <li>Tocantins</li>
+                            </ul>
+                        </li>
+                        <li>DOCES
+                            <ul>
+                                <li>Bahia</li>
+                                <li>Pernambuco</li>
+                                <li>Ceara
+                                    <ul>
+                                        <li>Capital</li>
+                                        <li>Interior</li>
+                                    </ul>
+                                </li>
+                                <li>Sergipe</li>
+                                <li>Alagoas</li>
+                                <li>Rio G Norte</li>
+                            </ul>
+                        </li>
+                        <li>OVOS
+                            <ul>
+                                <li>recheados</li>
+                                <li>sem recheio</li>
+                                <li>veganos
+                                    <ul>
+                                        <li>sabores</li>
+                                        <li>outros</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>BOMBONS
+                            <ul>
+                                <li>Minas Gerais</li>
+                                <li>SÃ£o Paulo</li>
+                                <li>E. Santo
+                                    <ul>
+                                        <li>Capital</li>
+                                        <li>Interior</li>
+                                    </ul>
+                                </li>
+                                <li>Rio de Janeiro</li>
+                            </ul>
+                        </li>
+                        <li>SOBRE
+                            <ul>
+                                <li>Rio G. Sul</li>
+                                <li>ParanÃ¡</li>
+                                <li>Sana Catarina
+                                    <ul>
+                                        <li>Capital</li>
+                                        <li>Interior</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <img src="IMG/banner.jpg" width="100%">
+                <div class="ovos">
+                    <img src="img/Delicioso chocolate ovos de páscoa _ Foto Premium.jfif" height="300" width=300">
+                    <img src="img/Ovo de páscoa de colher.jfif" height="300" width="300">
+                    <img src="img/Ferreiro rocher.jfif" height="300" width="300">
+                    <img src="img/Renda extra fature alto nessa páscoa.jfif" height="300" width="300">
+                    <img src="img/Páscoa 2023 - foto ovo da pascoa.jfif" height="300" width="300">
+                    <img src="img/Como fazer ovos de Pascoa na Colher receita fácil.jfif" height="300" width="300">
+                </div>
+                <div class="roda">
+                    <br><br><br>
+                    <div class="down_up"></div>
+                    <div class="down_meio">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>#NATUREZA</div>
+                    <div class="down_down">
+                        <a href="https://pt-br.facebook.com/" target="_blank"><img src="img/face_logo_02.png"></a> <a
+                            href="https://web.whatsapp.com/" target="_blank"><img src="img/whats_logo_01.png"></a> <a
+                            href="https://www.instagram.com/" target="_blank"><img src="img/inst_logo_01.png"></a>
+                    </div>
+                </div>
+
+    </body>
+
+</html>
